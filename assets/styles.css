@@ -1,3 +1,5 @@
+/*FIRST PAGE*/
+
 body{
     margin:0;
     font-family: "Montserrat", "Avenir";
@@ -21,5 +23,19 @@ body{
     text-decoration: none;
     border:1px solid grey;
     padding:.7rem;
-
 }
+
+/*SECOND PAGE*/
+.h1-first{
+    text-align: center;
+}
+#container{
+    margin: 0 auto;
+    text-align: center;
+}
+.circle {
+    height: 50px;
+    width: 50px;
+    background-color: #555;
+    border-radius: 50%;
+  }
