@@ -15,15 +15,11 @@ body{
 .firstPage-h2{
     font-size: 3rem;
     font-family: 'Courier New', Courier, monospace;
-    margin: 0;
+    margin: 0 0 .7rem 0;
 }
-.firstPage-button{
-    background:none;
-    color:rgb(13, 167, 228);
-    border-color:grey;
-    width:7rem;
-    height:3rem;
-    margin-top:.5rem;
-    font-size: 1rem;
-    word-spacing: 1rem;
+.first-page-button{
+    text-decoration: none;
+    border:1px solid grey;
+    padding:.7rem;
+
 }
