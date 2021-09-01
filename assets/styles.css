@@ -1,8 +1,8 @@
-/*FIRST PAGE*/
+/*START PAGE*/
 
 body{
     margin:0;
-    font-family: "Montserrat", "Avenir";
+    font-family: "sans-serif";
 }
 
 .first-page-content{
@@ -25,17 +25,18 @@ body{
     padding:.7rem;
 }
 
-/*SECOND PAGE*/
-.h1-first{
-    text-align: center;
-}
+/*First PAGE*/
+
 #container{
     margin: 0 auto;
     text-align: center;
 }
-.circle {
-    height: 50px;
-    width: 50px;
-    background-color: #555;
-    border-radius: 50%;
-  }
+h1{
+    font-size: 2.7rem;
+    margin-top: 6rem;
+    margin-bottom:0;
+}
+h4{
+    font-size: 1.5rem;
+    margin:0;
+}
