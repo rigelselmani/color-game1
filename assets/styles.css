@@ -2,11 +2,12 @@
 
 body{
     margin:0;
-    font-family: "sans-serif";
+    font-family: 'Open Sans', sans-serif;
 }
 
 .first-page-content{
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
 }
 .firstPage-img{
     width:18rem;
@@ -22,7 +23,8 @@ body{
 .first-page-button{
     text-decoration: none;
     border:1px solid grey;
-    padding:.7rem;
+    padding:.9rem;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /*First PAGE*/
