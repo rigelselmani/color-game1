@@ -52,18 +52,18 @@ h3{
     margin:0;
     background-color: white;
 }
-.container{
-    
-    width:28%;
+#container{
+    background-color: #868585;
+    max-width:30rem;
     margin:7rem auto;
 }
 .square{
     margin:0 auto;
     border:.3rem black solid;
-    width:34%;
+    width:10rem;
     height:8.8rem;
     margin:-1.8rem;
-    display: inline-block;
+    float: left;
     background-color: blue;
     border-radius: 100%;
 
