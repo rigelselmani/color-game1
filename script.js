@@ -1,14 +1,20 @@
-var num=6;
+var numSquares =6;
+var colors=generateRandomColors(numSquares);
+
 var squares=document.querySelectorAll(".square");
-var arr=[]
 
 
-for (var i=0;i<squares.length;i++){
-     squares[i].style.background=`${arr[i]}`
-}
 
-for (var i=0;i<num;i++){
-    arr.push(randomColor())
+    for (var i=0;i<squares.length;i++){
+            squares[i].style.background=colors[i]
+   }
+
+function generateRandomColors(num){
+    var arr=[]
+    for (var i=0;i<num;i++){
+        arr.push(randomColor())
+    }
+    return arr
 }
 
 function randomColor(){
