@@ -1,46 +1,37 @@
-// var colors=generateRandomColors();
 var squares=document.querySelectorAll(".square");
 
-
 var array=["red","blue","white","green","yellow","black"];
+var same=true;
 
-var random=Math.random()*array
-console.log(random)
 for (var i=0;i<squares.length;i++){
-
     squares[i].style.background=array[i]
+    var clicked=[]
 
-    squares[i].addEventListener("click",function(data){
-     console.log(this.style.background)
-
+    squares[i].addEventListener("click",function(){
+    if(clicked.length==0){
+            clicked.push(this.style.background)
+            firstClick();
+            console.log(clicked.length)
+        }
+    else if(clicked.length==1){
+            secondClick();
+            console.log(clicked)
+        }
     })
 }
 
-//     for (var i=0;i<squares.length;i++){
-//         squares[i].style.background=colors[i]
 
-//         squares[i].addEventListener("click", function(data){
-//           console.log(Math.floor(Math.random()*colors));
- 
-//         // squares[i].style.background=this.colors[i]
-//         })
-//         squares[i].style.background=colors[i]
-            
-//    }
+function firstClick(){
+    var array=["blue","green","yellow","white","black","red"];
+    for (var i=0;i<squares.length;i++){
+        squares[i].style.background=array[i]
+    }
+}
 
 
-// function generateRandomColors(){
-//     var arr=[]
-//     for (var i=0;i<6;i++){
-//         arr.push(randomColor())
-//     }
-//     return arr
-// }
-
-// function randomColor(){
-//     var r=Math.floor(Math.random()* 256);
-//     var g=Math.floor(Math.random()* 256);
-//     var b=Math.floor(Math.random()* 256);
-//     return "rgb("+ r +"," + g + "," + b + ")";
-// }
-
+function secondClick(){
+    var array=["green","blue","yellow","black","white","red"];
+    for (var i=0;i<squares.length;i++){
+        squares[i].style.background=array[i]
+    }
+}
