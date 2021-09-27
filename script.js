@@ -1,4 +1,5 @@
 var squares=document.querySelectorAll(".square");
+var level=document.querySelectorAll(".level");
 
 var array=["red","blue","white","green","yellow","black"];
 
@@ -81,4 +82,10 @@ function sixthClick(){
     for (var i=0;i<squares.length;i++){
         squares[i].style.background=array[i]
     }
+}
+
+function reset(){
+    var array=["blue","green","yellow","white","black","red"];
+    squares[i].style.background=array[i]
+   level++
 }
