@@ -1,55 +1,45 @@
 var squares=document.querySelectorAll(".square");
 
 var array=["red","blue","white","green","yellow","black"];
-var same=true;
 
 for (var i=0;i<squares.length;i++){
-    squares[i].style.background=array[i]
-    var clicked=[]
+        squares[i].style.background=array[i]
+        var clicked=[]
+        squares[i].addEventListener("click",function(){
 
-    squares[i].addEventListener("click",function(){
-    if(clicked.length==0){
-            clicked.push(this.style.background)
-            firstClick();
-            console.log(clicked)
+        if(clicked.length==0){
+                console.log("good")
+                clicked.push(this.style.background)
+                firstClick();
+            }
+        else if(clicked.length==1&& !clicked.includes(this.style.background)){
+                console.log("good")
+                clicked.push(this.style.background)
+                secondClick();
+            }
+        else if(clicked.length==2&& !clicked.includes(this.style.background)){
+                console.log("good")
+                clicked.push(this.style.background)
+                thirdClick();
+            }
+        else if(clicked.length==3&& !clicked.includes(this.style.background)){
+                console.log("good")
+                clicked.push(this.style.background)
+                fourthClick();
         }
-    else if(clicked.length==1){
-        if(clicked==this.style.background){
-            console.log("you got it")
-          
+        else if(clicked.length==4&& !clicked.includes(this.style.background)){
+                console.log("good")
+                clicked.push(this.style.background)
+                fifthClick();
         }
-            clicked.push(this.style.background)
-            secondClick();
-            console.log(clicked)
+        else if(clicked.length==5&& !clicked.includes(this.style.background)){
+                console.log("you win")
+                sixthClick();
+               
+        }else{
+            console.log("Try again")
         }
-    else if(clicked.length==2){
-        if(clicked==this.style.background){
-            console.log("you got it")
-            
-        }
-            clicked.push(this.style.background)
-            thirdClick();
-            console.log(clicked)
-        }
-    else if(clicked.length==3){
-        if(clicked==this.style.background){
-            console.log("you got it")
-            
-        }
-            clicked.push(this.style.background)
-            fourthClick();
-            console.log(clicked)
-    }
-    else if(clicked.length==4){
-        if(clicked==this.style.background){
-            console.log("you got it")
-           
-        }
-            clicked.push(this.style.background)
-            fifthClick();
-            console.log(clicked)
-}
-    })
+  })    
 }
 
 
@@ -82,6 +72,12 @@ function fourthClick(){
 }
 function fifthClick(){
     var array=["white","yellow","black","green","blue","red"]
+    for (var i=0;i<squares.length;i++){
+        squares[i].style.background=array[i]
+    }
+}
+function sixthClick(){
+    var array=["green","black","yellow","white","red","blue"]
     for (var i=0;i<squares.length;i++){
         squares[i].style.background=array[i]
     }
