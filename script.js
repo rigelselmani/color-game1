@@ -1,5 +1,4 @@
 var squares=document.querySelectorAll(".square");
-var level=document.querySelectorAll(".level");
 
 var array=["red","blue","white","green","yellow","black"];
 
@@ -9,36 +8,38 @@ for (var i=0;i<squares.length;i++){
         squares[i].addEventListener("click",function(){
 
         if(clicked.length==0){
-                console.log("good")
+                new Audio("assets/sounds/click.wav").play();
                 clicked.push(this.style.background)
                 firstClick();
             }
         else if(clicked.length==1&& !clicked.includes(this.style.background)){
-                console.log("good")
+                new Audio("assets/sounds/click.wav").play();
                 clicked.push(this.style.background)
                 secondClick();
             }
         else if(clicked.length==2&& !clicked.includes(this.style.background)){
-                console.log("good")
+                new Audio("assets/sounds/click.wav").play(); 
                 clicked.push(this.style.background)
                 thirdClick();
             }
         else if(clicked.length==3&& !clicked.includes(this.style.background)){
-                console.log("good")
+                new Audio("assets/sounds/click.wav").play();
                 clicked.push(this.style.background)
                 fourthClick();
         }
         else if(clicked.length==4&& !clicked.includes(this.style.background)){
-                console.log("good")
+                new Audio("assets/sounds/click.wav").play();
                 clicked.push(this.style.background)
                 fifthClick();
         }
         else if(clicked.length==5&& !clicked.includes(this.style.background)){
-                console.log("you win")
+                new Audio("assets/sounds/winfretless.ogg").play();
                 sixthClick();
                
         }else{
-            console.log("Try again")
+            var crash = new Audio("assets/sounds/tom-1.mp3");
+            reset()
+            crash.play();
         }
   })    
 }
@@ -84,8 +85,12 @@ function sixthClick(){
     }
 }
 
+var level=document.querySelectorAll(".level");
+
 function reset(){
     var array=["blue","green","yellow","white","black","red"];
-    squares[i].style.background=array[i]
-   level++
+    for(i=0;i<squares.length;i++){
+         squares[i].style.background=array[i]
+    }
+    level++
 }
