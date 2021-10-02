@@ -67,3 +67,22 @@ h3{
     background-color: blue;
     border-radius: 100%;
 }
+.move{
+    animation:  shake 0.1s  ;
+  }
+  
+  @keyframes shake{
+    0%{
+      transform: translateX(0)
+    }
+    5%{
+      transform: translateX(25px);
+    }
+      
+    20%{
+      transform: translateX(-25px);
+    }
+    50%{
+      transform: translateX(0px);
+    }
+  }

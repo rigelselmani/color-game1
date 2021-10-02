@@ -1,5 +1,6 @@
+    /////FIRST LEVEL CODE
     var array=["red","blue","white","green","yellow","black"];
-    
+ 
     for (i=0;i<array.length;i++){
     var clicked=[]
     var square=document.createElement("DIV");
@@ -38,18 +39,21 @@
                         sixthClick();
                        
                 }else{
-                    var crash = new Audio("assets/sounds/tom-1.mp3");
-                    reset()
-                    crash.play();
+                    new Audio("assets/sounds/tom-1.mp3").play();
+                    // var squares=document.querySelectorAll(".square")
+                    // for(i=0;i<squares.length;i++){
+                       this.classList.add("move")
+                    // }
                 }
           })  
 }
 
 function firstClick(){
     var array=["blue","green","yellow","white","black","red"];
+    document.querySelector(".scored-balls").textContent=1
     for (var i=0;i<array.length;i++){
         var squares=document.querySelectorAll(".square");
-
+     
         squares[i].style.background=array[i]
     }
 }
@@ -57,6 +61,7 @@ function firstClick(){
 
 function secondClick(){
     var array=["green","blue","yellow","black","white","red"];
+    document.querySelector(".scored-balls").textContent=2
     for (var i=0;i<array.length;i++){
         var squares=document.querySelectorAll(".square");
         squares[i].style.background=array[i]
@@ -65,6 +70,7 @@ function secondClick(){
 
 function thirdClick(){
     var array=["yellow","red","white","black","blue","green"]
+    document.querySelector(".scored-balls").textContent=3
     for (var i=0;i<array.length;i++){
         var squares=document.querySelectorAll(".square");
         squares[i].style.background=array[i]
@@ -72,6 +78,7 @@ function thirdClick(){
 }
 function fourthClick(){
     var array=["black","blue","yellow","red","green","white"]
+    document.querySelector(".scored-balls").textContent=4
     for (var i=0;i<array.length;i++){
         var squares=document.querySelectorAll(".square");
         squares[i].style.background=array[i]
@@ -79,6 +86,7 @@ function fourthClick(){
 }
 function fifthClick(){
     var array=["white","yellow","black","green","blue","red"]
+    document.querySelector(".scored-balls").textContent=5
     for (var i=0;i<array.length;i++){
         var squares=document.querySelectorAll(".square");
         squares[i].style.background=array[i]
@@ -86,6 +94,7 @@ function fifthClick(){
 }
 function sixthClick(){
     var array=["green","black","yellow","white","red","blue"]
+    document.querySelector(".scored-balls").textContent=6
     for (var i=0;i<square.length;i++){
         var squares=document.querySelectorAll(".square");
         squares[i].style.background=array[i]
@@ -95,9 +104,5 @@ function sixthClick(){
 var level=document.querySelectorAll(".level");
 
 function reset(){
-    var array=["blue","green","yellow","white","black","red"];
-    for(i=0;i<square.length;i++){
-         square.style.background=array[i]
-    }
-    level++
+         
 }
