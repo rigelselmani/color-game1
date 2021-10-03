@@ -107,7 +107,7 @@ function firstLevel(){
             var squares=document.querySelectorAll(".square");
             squares[i].style.background=array[i]
         }
-        array=[]
+        array=[]*-9
     }
 }    
 
@@ -126,6 +126,7 @@ function secondLevel(){
     var square=document.createElement("DIV");
     square.classList.add("square");
     square.style.background=array[i]
+    square.style.margin="0";
     document.getElementById("container").append(square);
     square.addEventListener("click",function(){
 
@@ -161,8 +162,11 @@ function secondLevel(){
                         new Audio("assets/sounds/click.wav").play();
                         seventhClick();
                 } else if(clicked.length==7&& !clicked.includes(this.style.background)){
+                        new Audio("assets/sounds/click.wav").play();
+                        seventhClick();
+                }else if(clicked.length==8&& !clicked.includes(this.style.background)){
                         new Audio("assets/sounds/win.mp3").play();
-                        eightClick();
+                        eightthClick();
                 }else{
                     new Audio("assets/sounds/wrong.mp3").play();
                        this.classList.add("move")
@@ -231,7 +235,7 @@ function secondLevel(){
             squares[i].style.background=array[i]
         }
     }
-    function eightClick(){
+    function eightthClick(){
         var array=["yellow","white","black","blue","green","red","orange","pink"];
         document.querySelector(".scored-balls").textContent=8
         for (var i=0;i<square.length;i++){
