@@ -157,17 +157,20 @@ function secondLevel(){
                 }
                 else if(clicked.length==5&& !clicked.includes(this.style.background)){
                         new Audio("assets/sounds/click.wav").play();
+                        clicked.push(this.style.background)
                         sixthClick();
-                } else if(clicked.length==6&& !clicked.includes(this.style.background)){
+                }
+                else if(clicked.length==6&& !clicked.includes(this.style.background)){
                         new Audio("assets/sounds/click.wav").play();
+                        clicked.push(this.style.background)
                         seventhClick();
-                } else if(clicked.length==7&& !clicked.includes(this.style.background)){
-                        new Audio("assets/sounds/click.wav").play();
-                        seventhClick();
-                }else if(clicked.length==8&& !clicked.includes(this.style.background)){
+                } 
+                else if(clicked.length==7&& !clicked.includes(this.style.background)){
                         new Audio("assets/sounds/win.mp3").play();
-                        eightthClick();
-                }else{
+                        clicked.push(this.style.background)
+                        document.querySelector(".scored-balls").textContent=8
+                }
+                else{
                     new Audio("assets/sounds/wrong.mp3").play();
                        this.classList.add("move")
                        resset()
@@ -228,16 +231,8 @@ function secondLevel(){
         }
     }
     function seventhClick(){
-        var array=["yellow","white","black","blue","green","red","orange","pink"];
+        var array=["yellow","pink","white","black","green","red","orange","blue"];
         document.querySelector(".scored-balls").textContent=7
-        for (var i=0;i<square.length;i++){
-            var squares=document.querySelectorAll(".square");
-            squares[i].style.background=array[i]
-        }
-    }
-    function eightthClick(){
-        var array=["yellow","white","black","blue","green","red","orange","pink"];
-        document.querySelector(".scored-balls").textContent=8
         for (var i=0;i<square.length;i++){
             var squares=document.querySelectorAll(".square");
             squares[i].style.background=array[i]
