@@ -114,7 +114,7 @@ function firstLevel(){
 /////SECOND LEVEL ////////////////////////////////////////
 function secondLevel(){
     var array=["blue","white","green","yellow","black","red","orange","pink"];
-    document.querySelector(".level").textContent=1;
+    document.querySelector(".level").textContent=2;
     document.querySelector(".balls-nr").textContent=8;
     resset()
     function resset(){
@@ -169,6 +169,10 @@ function secondLevel(){
                         new Audio("assets/sounds/win.mp3").play();
                         clicked.push(this.style.background)
                         document.querySelector(".scored-balls").textContent=8
+                        var squares =document.querySelectorAll(".square")
+                        for (i=0;i<squares.length;i++){
+                            squares[i].remove()
+                        }
                         thirdLevel()
                 }
                 else{
@@ -244,9 +248,9 @@ function secondLevel(){
 /////////////////THIRD LEVEL//////////////////////
 
 function thirdLevel(){
-    var array=["blue","white","green","yellow","black","red","orange","pink","green","purple"];
-    document.querySelector(".level").textContent=1;
-    document.querySelector(".balls-nr").textContent=8;
+    var array=["purple","white","blue","gray","yellow","orange","black","red","pink","green"];
+    document.querySelector(".level").textContent=3;
+    document.querySelector(".balls-nr").textContent=10;
     resset()
     function resset(){
         document.querySelector(".scored-balls").textContent=0
@@ -257,7 +261,8 @@ function thirdLevel(){
     var square=document.createElement("DIV");
     square.classList.add("square");
     square.style.background=array[i]
-    square.style.margin="0";
+    square.style.margin="1rem";
+    square.style.float="left";
     document.getElementById("container").append(square);
     square.addEventListener("click",function(){
 
@@ -295,15 +300,20 @@ function thirdLevel(){
                         new Audio("assets/sounds/click.wav").play();
                         clicked.push(this.style.background)
                         seventhClick();
-                } 
+                }
                 else if(clicked.length==7&& !clicked.includes(this.style.background)){
-                        new Audio("assets/sounds/win.mp3").play();
+                        new Audio("assets/sounds/click.wav").play();
                         clicked.push(this.style.background)
-                        document.querySelector(".scored-balls").textContent=8
-                        var squares =document.querySelectorAll(".square")
-                            for (i=0;i<squares.length;i++){
-                                squares[i].remove()
-                            }
+                        eighthClick();
+                }
+                else if(clicked.length==8&& !clicked.includes(this.style.background)){
+                        new Audio("assets/sounds/click.wav").play();
+                        clicked.push(this.style.background)
+                        ninethClick();
+                        } 
+                else if(clicked.length==9&& !clicked.includes(this.style.background)){
+                        new Audio("assets/sounds/win.mp3").play();
+                        document.querySelector(".scored-balls").textContent=10
                 }
                 else{
                     new Audio("assets/sounds/wrong.mp3").play();
@@ -314,7 +324,7 @@ function thirdLevel(){
     }
 
     function firstClick(){
-        var array=["blue","white","green","yellow","black","red","orange","pink","green","purple"];
+        var array=["purple","green","blue","white","pink","gray","yellow","black","red","orange"];
         document.querySelector(".scored-balls").textContent=1
         for (var i=0;i<array.length;i++){
             var squares=document.querySelectorAll(".square");
@@ -325,7 +335,7 @@ function thirdLevel(){
     
     
     function secondClick(){
-        var array=["blue","white","green","yellow","black","red","orange","pink","green","purple"];
+        var array=["yellow","green","blue","white","gray","orange","black","red","pink","purple"];
         document.querySelector(".scored-balls").textContent=2
         for (var i=0;i<array.length;i++){
             var squares=document.querySelectorAll(".square");
@@ -334,7 +344,7 @@ function thirdLevel(){
     }
     
     function thirdClick(){
-        var array=["blue","white","green","yellow","black","red","orange","pink","green","purple"];
+        var array=["green","blue","white","gray","yellow","black","red","orange","pink","purple"];
         document.querySelector(".scored-balls").textContent=3
         for (var i=0;i<array.length;i++){
             var squares=document.querySelectorAll(".square");
@@ -342,7 +352,7 @@ function thirdLevel(){
         }
     }
     function fourthClick(){
-        var array=["blue","white","green","yellow","black","red","orange","pink","green","purple"];
+        var array=["black","blue","green","white","gray","yellow","red","purple","orange","pink"];
         document.querySelector(".scored-balls").textContent=4
         for (var i=0;i<array.length;i++){
             var squares=document.querySelectorAll(".square");
@@ -350,7 +360,7 @@ function thirdLevel(){
         }
     }
     function fifthClick(){
-        var array=["blue","white","green","yellow","black","red","orange","pink","green","purple"];
+        var array=["blue","white","green","yellow","black","red","orange","pink","gray","purple"];
         document.querySelector(".scored-balls").textContent=5
         for (var i=0;i<array.length;i++){
             var squares=document.querySelectorAll(".square");
@@ -358,17 +368,33 @@ function thirdLevel(){
         }
     }
     function sixthClick(){
-        var array=["blue","white","green","yellow","black","red","orange","pink","green","purple"];
+        var array=["pink","blue","green","yellow","black","red","orange","gray","purple","white"];
         document.querySelector(".scored-balls").textContent=6
-        for (var i=0;i<square.length;i++){
+        for (var i=0;i<array.length;i++){
             var squares=document.querySelectorAll(".square");
             squares[i].style.background=array[i]
         }
     }
     function seventhClick(){
-        var array=["blue","white","green","yellow","black","red","orange","pink","green","purple"];
+        var array=["orange","purple","blue","white","gray","yellow","black","red","pink","green"];
         document.querySelector(".scored-balls").textContent=7
-        for (var i=0;i<square.length;i++){
+        for (var i=0;i<array.length;i++){
+            var squares=document.querySelectorAll(".square");
+            squares[i].style.background=array[i]
+        }
+    }
+    function eighthClick(){
+        var array=["purple","white","gray","yellow","black","red","blue","orange","pink","green"];
+        document.querySelector(".scored-balls").textContent=8
+        for (var i=0;i<array.length;i++){
+            var squares=document.querySelectorAll(".square");
+            squares[i].style.background=array[i]
+        }
+    }
+    function ninethClick(){
+        var array=["orange","blue","white","green","yellow","black","red","pink","gray","purple"];
+        document.querySelector(".scored-balls").textContent=9
+        for (var i=0;i<array.length;i++){
             var squares=document.querySelectorAll(".square");
             squares[i].style.background=array[i]
         }
