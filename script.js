@@ -261,8 +261,6 @@ function thirdLevel(){
     var square=document.createElement("DIV");
     square.classList.add("square");
     square.style.background=array[i]
-    square.style.margin="1rem";
-    square.style.float="left";
     document.getElementById("container").append(square);
     square.addEventListener("click",function(){
 
@@ -314,7 +312,8 @@ function thirdLevel(){
                 else if(clicked.length==9&& !clicked.includes(this.style.background)){
                         new Audio("assets/sounds/win.mp3").play();
                         document.querySelector(".scored-balls").textContent=10
-                }
+                      
+                        }
                 else{
                     new Audio("assets/sounds/wrong.mp3").play();
                        this.classList.add("move")
@@ -400,4 +399,3 @@ function thirdLevel(){
         }
     }
 }
-
