@@ -1,12 +1,4 @@
-function start(){
-    var prove=document.querySelector(".level")
-    if(prove.innerText==0){
-        firstLevel();
-    }else if(prove.innerText==1){
-        secondLevel();
-    }
-}
-start()
+
 //////////FIRST LEVEL ///////////////
 function firstLevel(){
         var array=["red","blue","white","green","yellow","black"];
