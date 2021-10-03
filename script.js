@@ -1,4 +1,4 @@
-
+firstLevel();
 //////////FIRST LEVEL ///////////////
 function firstLevel(){
         var array=["red","blue","white","green","yellow","black"];
@@ -41,10 +41,13 @@ function firstLevel(){
                             fifthClick();
                     }
                     else if(clicked.length==5&& !clicked.includes(this.style.background)){
-                            new Audio("assets/sounds/winfretless.ogg").play();
-                            document.querySelector(".level").textContent=1;
+                            new Audio("assets/sounds/win.mp3").play();
                             sixthClick();
-                            start();
+                            var squares =document.querySelectorAll(".square")
+                            for (i=0;i<squares.length;i++){
+                                squares[i].remove()
+                            }
+                            secondLevel();
                     }else{
                         new Audio("assets/sounds/wrong.mp3").play();
                            this.classList.add("move")
@@ -110,20 +113,20 @@ function firstLevel(){
 
 /////SECOND LEVEL ////////////////////////////////////////
 function secondLevel(){
-    var array=["blue","green","yellow","white","black","red","orange","pink"];
-    
+    var array=["blue","white","green","yellow","black","red","orange","pink"];
     document.querySelector(".level").textContent=1;
-
+    document.querySelector(".balls-nr").textContent=8;
+    resset()
+    function resset(){
+        document.querySelector(".scored-balls").textContent=0
+        clicked=[]
+    }
     for (i=0;i<array.length;i++){
     var clicked=[]
     var square=document.createElement("DIV");
     square.classList.add("square");
     square.style.background=array[i]
     document.getElementById("container").append(square);
-    function resset(){
-        document.querySelector(".scored-balls").textContent=0
-        clicked=[]
-    }
     square.addEventListener("click",function(){
 
                 if(clicked.length==0){
@@ -152,9 +155,14 @@ function secondLevel(){
                         fifthClick();
                 }
                 else if(clicked.length==5&& !clicked.includes(this.style.background)){
-                        new Audio("assets/sounds/winfretless.ogg").play();
+                        new Audio("assets/sounds/click.wav").play();
                         sixthClick();
-                       
+                } else if(clicked.length==6&& !clicked.includes(this.style.background)){
+                        new Audio("assets/sounds/click.wav").play();
+                        seventhClick();
+                } else if(clicked.length==7&& !clicked.includes(this.style.background)){
+                        new Audio("assets/sounds/win.mp3").play();
+                        eightClick();
                 }else{
                     new Audio("assets/sounds/wrong.mp3").play();
                        this.classList.add("move")
@@ -175,7 +183,7 @@ function secondLevel(){
     
     
     function secondClick(){
-        var array=["blue","green","yellow","white","black","red","orange","pink"];
+        var array=["blue","pink","orange","green","red","yellow","white","black"];
         document.querySelector(".scored-balls").textContent=2
         for (var i=0;i<array.length;i++){
             var squares=document.querySelectorAll(".square");
@@ -184,7 +192,7 @@ function secondLevel(){
     }
     
     function thirdClick(){
-        var array=["blue","green","yellow","white","black","red","orange","pink"];
+        var array=["white","blue","green","yellow","black","red","pink","orange"];
         document.querySelector(".scored-balls").textContent=3
         for (var i=0;i<array.length;i++){
             var squares=document.querySelectorAll(".square");
@@ -192,7 +200,7 @@ function secondLevel(){
         }
     }
     function fourthClick(){
-        var array=["blue","green","yellow","white","black","red","orange","pink"];
+        var array=["yellow","blue","black","green","white","pink","red","orange"];
         document.querySelector(".scored-balls").textContent=4
         for (var i=0;i<array.length;i++){
             var squares=document.querySelectorAll(".square");
@@ -200,7 +208,7 @@ function secondLevel(){
         }
     }
     function fifthClick(){
-        var array=["blue","green","yellow","white","black","red","orange","pink"];
+        var array=["black","green","yellow","white","red","orange","pink","blue"];
         document.querySelector(".scored-balls").textContent=5
         for (var i=0;i<array.length;i++){
             var squares=document.querySelectorAll(".square");
@@ -208,8 +216,24 @@ function secondLevel(){
         }
     }
     function sixthClick(){
-        var array=["blue","green","yellow","white","black","red","orange","pink"];
+        var array=["red","orange","pink","blue","green","yellow","white","black"];
         document.querySelector(".scored-balls").textContent=6
+        for (var i=0;i<square.length;i++){
+            var squares=document.querySelectorAll(".square");
+            squares[i].style.background=array[i]
+        }
+    }
+    function seventhClick(){
+        var array=["yellow","white","black","blue","green","red","orange","pink"];
+        document.querySelector(".scored-balls").textContent=7
+        for (var i=0;i<square.length;i++){
+            var squares=document.querySelectorAll(".square");
+            squares[i].style.background=array[i]
+        }
+    }
+    function eightClick(){
+        var array=["yellow","white","black","blue","green","red","orange","pink"];
+        document.querySelector(".scored-balls").textContent=8
         for (var i=0;i<square.length;i++){
             var squares=document.querySelectorAll(".square");
             squares[i].style.background=array[i]
