@@ -112,8 +112,8 @@ function firstLevel(){
 }    
 
 /////SECOND LEVEL ////////////////////////////////////////
+
 function secondLevel(){
-    document.querySelector("#container").style.margin="3rem auto";
     var array=["blue","white","green","yellow","black","red","orange","pink"];
     document.querySelector(".level").textContent=2;
     document.querySelector(".balls-nr").textContent=8;

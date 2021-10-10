@@ -83,7 +83,7 @@ h3{
 #container{
     background-color: #868585;
     max-width:30rem;
-    margin:7rem auto;
+    margin:5rem auto;
 }
 .square{
     margin:0 auto;
@@ -116,4 +116,15 @@ h3{
     80% { transform: translate(-1px, -1px) rotate(1deg); }
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+  @media screen and (max-width:590px) {
+    #container{
+        max-width:50%;
+    }  
+    .square{
+        width:7rem;
+        height:6rem;
+        margin:-1rem;
+      }
   }
