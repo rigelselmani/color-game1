@@ -68,7 +68,7 @@ function firstLevel(){
     
     
     function secondClick(){
-        var array=["green","blue","yellow","black","white","red"];
+        var array=["red","green","blue","yellow","black","white"];
         document.querySelector(".scored-balls").textContent=2
         for (var i=0;i<array.length;i++){
             var squares=document.querySelectorAll(".square");
@@ -85,7 +85,7 @@ function firstLevel(){
         }
     }
     function fourthClick(){
-        var array=["black","blue","yellow","red","green","white"]
+        var array=["blue","black","yellow","red","green","white"]
         document.querySelector(".scored-balls").textContent=4
         for (var i=0;i<array.length;i++){
             var squares=document.querySelectorAll(".square");
@@ -113,6 +113,7 @@ function firstLevel(){
 
 /////SECOND LEVEL ////////////////////////////////////////
 function secondLevel(){
+    document.querySelector("#container").style.margin="3rem auto";
     var array=["blue","white","green","yellow","black","red","orange","pink"];
     document.querySelector(".level").textContent=2;
     document.querySelector(".balls-nr").textContent=8;
